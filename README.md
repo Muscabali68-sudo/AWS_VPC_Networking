@@ -29,7 +29,7 @@ A custom VPC was created using the CIDR block 10.0.0.0/16 to allow sufficient IP
 
 **Step 2: Public Subnet And Private Subnet**
 ![alt text](image-1.png)
-![alt text](<Skärmavbild 2026-06-12 kl. 19.34.47.png>)
+![alt text](image-8.png)
 
 **Subnet Division – Public vs Private**
 To simulate a secure, production-like environment, the VPC was divided into two separate subnets:
@@ -52,9 +52,9 @@ To simulate a secure, production-like environment, the VPC was divided into two 
 - It follows the principle of least privilege. Only expose what is necessary
 
 **# Step 3: Internet Gateway Creation**
-![alt text](<Skärmavbild 2026-06-12 kl. 19.36.59-1.png>)
+![alt text](image-9.png)
 **- Internet Gateway Attached to VPC**
-![alt text](<Skärmavbild 2026-06-12 kl. 19.37.17.png>)
+![alt text](image-10.png)
 
 An Internet Gateway was attached to the VPC to allow resources in the public subnet to communicate with the internet.
 
@@ -84,7 +84,7 @@ Private resources remain secure and isolated from incoming traffic
 **Step 5: Route Tables** 
 
 Two route tables were configured:
-![alt text](<Skärmavbild 2026-06-12 kl. 20.06.29.png>)
+![alt text](image-11.png)
 
 **Public Route Table**
 - Route: 0.0.0.0/0 → Internet Gateway
