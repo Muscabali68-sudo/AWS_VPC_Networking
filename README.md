@@ -14,11 +14,11 @@ Private EC2 instance
 Security Groups controlling access between resources
 
  **Architecture Diagram**
- ![alt text](image-2.png)
+ ![alt text](Images/image-2.png)
 
 **Step 1: Create a VPC**
 
-![alt text](image.png)
+![alt text](Images/image.png)
 
 **Why this step exists**
 A VPC provides an isolated networking boundary in AWS. All subnets, route tables, and instances must reside inside a VPC.
@@ -28,8 +28,8 @@ A VPC provides an isolated networking boundary in AWS. All subnets, route tables
 A custom VPC was created using the CIDR block 10.0.0.0/16 to allow sufficient IP space for multiple subnets.
 
 **Step 2: Public Subnet And Private Subnet**
-![alt text](image-1.png)
-![alt text](image-8.png)
+![alt text](Images/image-1.png)
+![alt text](Images/image-8.png)
 
 **Subnet Division – Public vs Private**
 To simulate a secure, production-like environment, the VPC was divided into two separate subnets:
@@ -52,9 +52,9 @@ To simulate a secure, production-like environment, the VPC was divided into two 
 - It follows the principle of least privilege. Only expose what is necessary
 
 **# Step 3: Internet Gateway Creation**
-![alt text](image-9.png)
+![alt text](Images/image-9.png)
 **- Internet Gateway Attached to VPC**
-![alt text](image-10.png)
+![alt text](Images/image-10.png)
 
 An Internet Gateway was attached to the VPC to allow resources in the public subnet to communicate with the internet.
 
@@ -64,7 +64,7 @@ A route was configured:
 This allows inbound and outbound internet traffic for the public subnet.
 
 **Step 4: NAT Gateway**
-![alt text](image.png)
+![alt text](Images/image.png)
 **Its role is to enable:**
 - Outbound internet access from instances in the private subnet
 
@@ -84,7 +84,7 @@ Private resources remain secure and isolated from incoming traffic
 **Step 5: Route Tables** 
 
 Two route tables were configured:
-![alt text](image-11.png)
+![alt text](Images/image-11.png)
 
 **Public Route Table**
 - Route: 0.0.0.0/0 → Internet Gateway
@@ -95,12 +95,12 @@ Two route tables were configured:
 - Associated with the private subnet
 
 **Step 6: Security Groups**
-![alt text](image-4.png)
+![alt text](Images/image-4.png)
 
 **Public EC2 Security Group**
 This Security Group controls traffic to the internet-facing instance.
 
-![alt text](image-5.png)
+![alt text](Images/image-5.png)
 
 ✅ SSH (port 22) – from my IP only
 Why? Only the administrator should have remote access.
@@ -114,9 +114,9 @@ Outbound rules:
 Why? The instance needs to download updates and respond to requests.
 
 **Private EC2 Security Group**
-![alt text](image-6.png)
+![alt text](Images/image-6.png)
 **Key principle:**
 - The private instance only accepts traffic from the public instance – never directly from the internet.
 
 **Step 7:Testing and Confirming ✅**
-![alt text](image-7.png)
+![alt text](Images/image-7.png)
