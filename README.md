@@ -64,7 +64,7 @@ A route was configured:
 This allows inbound and outbound internet traffic for the public subnet.
 
 **Step 4: NAT Gateway**
-![alt text](image-3.png)
+![alt text](image.png)
 **Its role is to enable:**
 - Outbound internet access from instances in the private subnet
 
